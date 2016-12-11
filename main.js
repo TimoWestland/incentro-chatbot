@@ -173,11 +173,23 @@ var calcPrice = function(data) {
 };
 
 var calcRange = function(price) {
-    var priceLow = parseFloat(price * 0.9).toFixed(0);
-    var priceHigh = parseFloat(price * 1.1).toFixed(0);
+    var priceLow = addDots(parseFloat(price * 0.9).toFixed(0));
+    var priceHigh = addDots(parseFloat(price * 1.1).toFixed(0));
+
     return '€' + priceLow.toString() + ' - ' + '€' + priceHigh.toString();
 };
 
+var addDots = function(nStr) {
+    nStr += '';
+    var x = nStr.split('.');
+    var x1 = x[0];
+    var x2 = x.length > 1 ? '.' + x[1] : '';
+    var rgx = /(\d+)(\d{3})/;
+    while (rgx.test(x1)) {
+        x1 = x1.replace(rgx, '$1' + '.' + '$2'); // changed comma to dot here
+    }
+    return x1 + x2;
+};
 
 var postToHubspot = function($form) {
     $.ajax({
