@@ -28,7 +28,7 @@ $(function() {
                 $priceElem.text(range + '*');
 
                 var $hidden = $('<input type="hidden" name="total_price"/>');
-                $hidden.val(price);
+                $hidden.val(range);
                 $form.append($hidden);
 
                 $chatForm.hide();
