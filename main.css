@@ -7,13 +7,15 @@
 body {
     margin: 0;
     font-family: 'Raleway', sans-serif;
-    overflow: hidden;
 }
 
 .wrapper {
     background-color: #FAFAFA;
     width: 100vw;
-    height: 105vh;
+    height: 100vh;
+    overflow: hidden;
+    margin: 0;
+    padding: 0;
 }
 
 #conversational {
@@ -23,10 +25,11 @@ body {
 .conversational-form {
     font-family: 'Raleway', sans-serif !important;
     background-color: white;
-    max-width: 620px;
+    max-width: 700px;
     margin: 0 auto;
     border-left: 1px solid #E9E9E9;
     border-right: 1px solid #E9E9E9;
+    bottom: -52px !important;
 }
 
 .conversational-form--show {
@@ -45,11 +48,15 @@ cf-input.animate-in input:focus {
     box-shadow: none;
 }
 
+cf-input.animate-in input {
+    font-family: 'Raleway', sans-serif !important;
+}
+
 text[value-added] {
     background-color: #F8F8F8;
     font-size: 13px;
     font-weight: 400;
-    color: rgba(0, 0, 0, .4);
+    color: rgba(0, 0, 0, .75);
 }
 
 cf-chat-response:nth-of-type(2n+2) text[value-added],
@@ -59,6 +66,7 @@ cf-chat-response:nth-of-type(2n+2) text[thinking] {
 }
 
 .cf-button.animate-in {
+    font-size: 12px;
     border-color: #F56A1A;
     color: #F56A1A;
     font-weight: 500;
@@ -98,6 +106,7 @@ cf-input.animate-in input {
     pointer-events: none;
     transition: transform 250ms ease-in;
 }
+
 .chatbot-overlay._is_visible {
     transform: scale(1);
     pointer-events: all;

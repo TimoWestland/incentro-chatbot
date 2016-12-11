@@ -6,7 +6,7 @@ $(function() {
     var $chatForm = $('#conversational-form');
 
     // Set day or night greeting text and ending text
-    var $greeting = $('#name');
+    var $greeting = $('#firstname');
     var greeting = checkDayOrNight() === 'day' ? 'Goedemiddag' : 'Goedeavond';
     var greetingText = $greeting.attr('cf-questions').replace('[greeting]', greeting);
     $greeting.attr('cf-questions', greetingText);
@@ -34,7 +34,7 @@ $(function() {
                 $chatForm.hide();
                 $overlay.addClass('_is_visible');
 
-                // postToHubspot($form);
+                postToHubspot($form);
             }
         });
     }
@@ -50,7 +50,7 @@ var calcPrice = function(data) {
         var value = item.value;
 
         switch (name) {
-            case 'website-size':
+            case 'website_size':
                 switch (value) {
                     case 'klein':
                         price += 2500;
@@ -64,7 +64,7 @@ var calcPrice = function(data) {
                 }
                 break;
 
-            case 'categorie-project':
+            case 'design_type':
                 switch (value) {
                     case 'redesign':
                         price += 2500;
@@ -75,7 +75,7 @@ var calcPrice = function(data) {
                 }
                 break;
 
-            case 'huisstijl-aanwzig':
+            case 'create_brand_manual':
                 switch (value) {
                     case 'ja':
                         price += 0;
@@ -100,7 +100,7 @@ var calcPrice = function(data) {
                 }
                 break;
 
-            case 'mobile-first':
+            case 'mobile_first':
                 switch (value) {
                     case 'ja':
                         price += 2500;
@@ -111,7 +111,7 @@ var calcPrice = function(data) {
                 }
                 break;
 
-            case 'doel-website':
+            case 'website_goal':
                 switch (value) {
                     case 'informeren':
                         price += 500;
@@ -125,7 +125,7 @@ var calcPrice = function(data) {
                 }
                 break;
 
-            case 'interactie':
+            case 'visitor_interactions':
                 switch (value) {
                     case 'geen':
                         price += 0;
@@ -139,7 +139,7 @@ var calcPrice = function(data) {
                 }
                 break;
 
-            case 'user-tests':
+            case 'user_tests':
                 switch (value) {
                     case 'nee':
                         price += 0;
@@ -153,7 +153,7 @@ var calcPrice = function(data) {
                 }
                 break;
 
-            case 'overall-kwaliteit':
+            case 'overall_quality':
                 switch (value) {
                     case 'bare-bones':
                         price += 500;
@@ -179,7 +179,7 @@ var calcRange = function(price) {
 };
 
 
-var postToHubspot = function(event, $form) {
+var postToHubspot = function($form) {
     $.ajax({
         type: 'POST',
         url: POST_URL,
