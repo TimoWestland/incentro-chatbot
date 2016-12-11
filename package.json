@@ -1,25 +1,29 @@
 {
-    "name": "incentro-chatbot",
-    "version": "1.0.0",
-    "description": "Chatbot experiment",
-    "main": "main.js",
-    "scripts": {
-        "test": "echo \"Error: no test specified\" && exit 1",
-        "build": "tsc",
-        "watch" : "tsc -w",
-        "start": "lite-server"
-    },
-    "repository": {
-        "type": "git",
-        "url": "git+https://github.com/TimoWestland/incentro-chatbot.git"
-    },
-    "author": "Timo Westland",
-    "license": "MIT",
-    "bugs": {
-        "url": "https://github.com/TimoWestland/incentro-chatbot/issues"
-    },
-    "homepage": "https://github.com/TimoWestland/incentro-chatbot#readme",
-    "devDependencies": {
-        "lite-server": "^2.2.2"
-    }
+  "name": "incentro-chatbot",
+  "version": "1.0.0",
+  "description": "Chatbot experiment",
+  "main": "main.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "tsc",
+    "watch": "tsc -w",
+    "start": "lite-server"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/TimoWestland/incentro-chatbot.git"
+  },
+  "author": "Timo Westland",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/TimoWestland/incentro-chatbot/issues"
+  },
+  "homepage": "https://github.com/TimoWestland/incentro-chatbot#readme",
+  "devDependencies": {
+    "lite-server": "^2.2.2"
+  },
+  "dependencies": {
+    "fastdom": "^1.0.5",
+    "jquery": "^3.1.1"
+  }
 }

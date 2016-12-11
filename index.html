@@ -5,10 +5,256 @@
     <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Incentronaut chatbot</title>
+    <link rel="stylesheet" type="text/css" href="main.css">
 </head>
 <body>
+    <div class="wrapper" id="form-outer">
+        <form id="conversational" action="" method="POST">
+            <div class="form-group">
+                <label for="your-name">Name</label>
+                <input cf-questions="[greeting]! Ik ben de Incentro chatbot. Wat is jouw naam?" type="name"
+                       class="form-control"
+                       name="name"
+                       id="name">
+            </div>
 
-    <script type="text/javascript" src="https://rawgit.com/space10-community/conversational-form/master/dist/conversational-form.min.js" crossorigin></script>
-    <script src="build/main.js"></script>
+            <div class="form-group">
+                <label for="website-size">Website size</label>
+                <div class="radio">
+                    <label>
+                        <input
+                            cf-questions="Leuk je te ontmoeten, {previous-answer}! Doormiddel van een aantal vragen ga ik je
+                            helpen een prijsindicatie voor jouw webdesign project te geven. Hoe groot is je website?"
+                            type="radio" name="website-size" id="website-size" value="klein">
+                        Klein
+                    </label>
+                </div>
+                <div class="radio">
+                    <label>
+                        <input type="radio" name="website-size" id="website-size-2" value="middel">
+                        Middel
+                    </label>
+                </div>
+                <div class="radio">
+                    <label>
+                        <input type="radio" name="website-size" id="website-size-3" value="groot">
+                        Groot
+                    </label>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label for="categorie-project">Categorie project</label>
+                <div class="radio">
+                    <label>
+                        <input
+                            cf-questions="In welke categorie zou je jouw design project indelen?"
+                            type="radio" name="categorie-project" id="categorie-project" value="redesign">
+                        Redesign en herstructurering huidige site
+                    </label>
+                </div>
+                <div class="radio">
+                    <label>
+                        <input type="radio" name="categorie-project" id="categorie-project-2" value="nieuw">
+                        Compleet nieuwe site "from scratch"
+                    </label>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label for="huisstijl-aanwezig">Huisstijl aanwezig</label>
+                <div class="radio">
+                    <label>
+                        <input
+                            cf-questions="Dient er een huisstijl ontwikkeld te worden?"
+                            type="radio" name="huisstijl-aanwezig" id="huisstijl-aanwezig" value="ja">
+                        Ja
+                    </label>
+                </div>
+                <div class="radio">
+                    <label>
+                        <input type="radio" name="huisstijl-aanwezig" id="huisstijl-aanwezig-2" value="nee">
+                        Nee, is al aanwezig
+                    </label>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label for="responsive">Responsive</label>
+                <div class="radio">
+                    <label>
+                        <input
+                            cf-questions="Voor hoeveel scherm maten moet je design geoptimaliseerd zijn?"
+                            type="radio" name="responsive" id="responsive" value="1-tot-3">
+                        1 tot 3 scherm maten
+                    </label>
+                </div>
+                <div class="radio">
+                    <label>
+                        <input type="radio" name="responsive" id="responsive-2" value="3-tot-5">
+                        3 tot 5 scherm maten
+                    </label>
+                </div>
+                <div class="radio">
+                    <label>
+                        <input type="radio" name="responsive" id="responsive-3" value="meer-dan-5">
+                        Meer dan 5 scherm maten
+                    </label>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label for="mobile-first">Mobile first</label>
+                <div class="radio">
+                    <label>
+                        <input
+                            cf-questions="Moet het design geoptimaliseerd zijn voor mobiel? (mobile-first)"
+                            type="radio" name="mobile-first" id="mobile-first" value="ja">
+                        Ja
+                    </label>
+                </div>
+                <div class="radio">
+                    <label>
+                        <input type="radio" name="mobile-first" id="mobile-first-2" value="nee">
+                        Nee
+                    </label>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label for="doel-website">Doel website</label>
+                <div class="radio">
+                    <label>
+                        <input
+                            cf-questions="Wat is het primaire doel van de website?"
+                            type="radio" name="doel-website" id="doel-website" value="informeren">
+                        Informeren
+                    </label>
+                </div>
+                <div class="radio">
+                    <label>
+                        <input type="radio" name="doel-website" id="doel-website-2" value="inspireren">
+                        Inspireren
+                    </label>
+                </div>
+                <div class="radio">
+                    <label>
+                        <input type="radio" name="doel-website" id="doel-website-3" value="converteren">
+                        Converteren
+                    </label>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label for="interactie">interactie</label>
+                <div class="radio">
+                    <label>
+                        <input
+                            cf-questions="Hoeveel interactie bevat de website (bijvoorbeeld formulieren of een mijn omgeving)"
+                            type="radio" name="interactie" id="interactie" value="geen">
+                            Geen
+                    </label>
+                </div>
+                <div class="radio">
+                    <label>
+                        <input type="radio" name="interactie" id="interactie-2" value="weinig">
+                        Weinig
+                    </label>
+                </div>
+                <div class="radio">
+                    <label>
+                        <input type="radio" name="interactie" id="interactie-3" value="veel">
+                        Veel
+                    </label>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label for="user-tests">user tests</label>
+                <div class="radio">
+                    <label>
+                        <input
+                            cf-questions="Wil je het design laten user testen?"
+                            type="radio" name="user-tests" id="user-tests" value="nee">
+                        Nee
+                    </label>
+                </div>
+                <div class="radio">
+                    <label>
+                        <input type="radio" name="user-tests" id="user-tests-2" value="gedeeltelijk">
+                        Alleen de belangrijke flows
+                    </label>
+                </div>
+                <div class="radio">
+                    <label>
+                        <input type="radio" name="user-tests" id="user-tests-3" value="ja">
+                        Ja
+                    </label>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label for="overall-kwaliteit">overall kwaliteit</label>
+                <div class="radio">
+                    <label>
+                        <input
+                            cf-questions="Hoe hoog moet de kwaliteit van het design zijn?"
+                            type="radio" name="overall-kwaliteit" id="overall-kwaliteit" value="bare-bones">
+                        Bare bones
+                    </label>
+                </div>
+                <div class="radio">
+                    <label>
+                        <input type="radio" name="overall-kwaliteit" id="overall-kwaliteit-2" value="stock">
+                        Stock
+                    </label>
+                </div>
+                <div class="radio">
+                    <label>
+                        <input type="radio" name="overall-kwaliteit" id="overall-kwaliteit-3" value="beautiful">
+                        Beautiful
+                    </label>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label for="your-email">Email</label>
+                <input
+                    cf-questions="Wil je dit gesprek inclusief prijs indicatie per mail ontvangen? Laat dan je email adres
+                    achter." type="email" class="form-control" name="email" id="email">
+            </div>
+
+            <div class="form-group">
+                <label for="thats-all">Final go</label>
+                <select cf-questions="Dat was het. fijne [time] verder!" id="thats-all" class="form-control">
+                    <option></option>
+                    <option>Jij ook!</option>
+                </select>
+            </div>
+
+            <!--<button type="submit" class="btn btn-default">Submit</button>-->
+        </form>
+    </div>
+
+    <div class="chatbot-overlay">
+        <div class="chatbot-overlay__content">
+            <span class="chatbot-overlay__prePrice">jouw design kost ongeveer:</span>
+            <h1 class="chatbot-overlay__price">&euro; 16.000 - 24.000</h1>
+
+            <a class="typographyAnchor--button" href="">lees meer over web design van incentro</a>
+
+            <p class="chatbot-overlay__disclaimer">* Deze prijs is slechsts een indicatie. Aan deze prijs kunnen geen rechten
+                ontleend worden.</p>
+        </div>
+    </div>
+
+    <script
+        src="https://code.jquery.com/jquery-3.1.1.min.js"
+        integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="
+        crossorigin="anonymous"></script>
+    <script type="text/javascript"
+            src="https://rawgit.com/space10-community/conversational-form/master/dist/conversational-form.min.js"
+            crossorigin></script>
+    <script src="main.js"></script>
 </body>
 </html>
